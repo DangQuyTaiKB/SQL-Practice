@@ -1,3 +1,10 @@
+/*markdown
+- Khái niệm về bảng biểu, cột và bản ghi trong Cơ sở dữ liệu.
+- Thế nào là ngôn ngữ SQL và cách lấy dữ liệu từ các bảng với câu lệnh SELECT.
+- Sử dụng định danh và các phép tính cơ bản trên cột trong SQL.
+- using HR Schema (Oracle Live SQL)
+*/
+
 -- select first name from employees
 SELECT first_name FROM employees;
 
