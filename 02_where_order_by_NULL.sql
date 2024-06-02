@@ -34,6 +34,7 @@ select * from emp where comm is not null order by sal;
 select * from emp where comm is not null order by sal desc;
 
 
+
 -- Thứ tự ưu tiên khi thực hiện nhiều điều kiện and và or lồng nhau
 -- and có độ ưu tiên cao hơn or
 -- trong thực tế nên sử dụng dấu ngoặc để rõ ràng hơn
@@ -45,3 +46,39 @@ select * from emp where (ename like '%N%' and sal > 1000) or deptno = 30;
 
 -- tương đương với
 select * from emp where deptno = 30 or (ename like '%N%' and sal > 1000);
+
+
+-- Viết câu lệnh tìm các nhân viên có mã quản lý là 100 và lương lớn hơn 10000, 
+-- sau đó sắp xếp theo lương từ cao đến thấp.
+SELECT 
+   first_name || ' ' || last_name AS full_name, 
+   manager_id
+FROM employees
+WHERE manager_id = 100 AND salary > 10000
+ORDER BY salary DESC;
+
+
+-- Viết câu lệnh tìm nhân viên có lương trong khoảng từ 4000 đến 8000
+SELECT 
+   first_name || ' ' || last_name AS full_name, 
+   salary
+FROM employees
+WHERE salary >= 4000 AND salary <= 8000
+-- có thể sử dụng toán tử BETWEEN như sau:
+-- where salary BETWEEN 4000 AND 8000
+ORDER BY salary DESC;
+
+-- Viết câu lệnh tìm các công việc có mô tả là quản lý và sắp xếp theo ID
+SELECT 
+   job_title, job_id 
+FROM jobs
+WHERE job_title LIKE '%Manager%'
+ORDER BY job_id;
+
+-- Viết câu lệnh tìm các nhân viên không thuộc phòng ban có ID là 40, 50, 60
+SELECT 
+   first_name || ' ' || last_name AS full_name,
+   department_id 
+FROM employees 
+WHERE department_id NOT IN (40, 50, 60)
+ORDER BY full_name;
