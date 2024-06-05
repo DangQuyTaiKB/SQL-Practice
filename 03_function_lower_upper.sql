@@ -36,3 +36,23 @@ SELECT CONCAT(department_id, employee_id) AS unique_id, first_name || ' ' || las
 
 SELECT first_name || '' || last_name || 'earns' || TO_CHAR(salary, '$99,999.00') || 'per month' as salary_info
 FROM employees;
+
+
+
+-- Viết câu lệnh hiển thị tên và mức nhận hoa hồng của từng nhân viên. Nếu nhân viên không có COMMISSION thì hiển thị là “No Commission”.
+
+SELECT 
+   first_name || ' ' || last_name AS full_name, 
+   NVL(TO_CHAR(COMMISSION_PCT,'.9'),'NO COMMISSION') AS commission
+FROM EMPLOYEES;
+
+-- Viết câu lệnh hiển thị tên các nhân viên và xếp hạn mã công việc theo thứ tự như sau:
+--  AD_PRES là A, ST_MAN là B, IT_PROG là C, SA_REP là D, ST_CLERK là E (gợi ý sử dụng hàm DECODE).
+SELECT
+   first_name || ' ' || last_name AS full_name,
+   job_id, DECODE(
+      job_id, 
+      'AD_PRES','A', 'ST_MAN','B', 'IT_PROG','C',
+      'SA_REP','D', 'ST_CLERK','E'
+   ,0) AS grade 
+FROM employees;
