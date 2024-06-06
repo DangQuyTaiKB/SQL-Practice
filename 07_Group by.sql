@@ -1,6 +1,8 @@
 /*markdown
 - Cách thức sử dụng mệnh đề GROUP BY trong câu lệnh SELECT để gộp nhóm dữ liệu với nhau.
 - Lọc dữ liệu sau khi gộp nhóm với mệnh đề HAVING.
+*/
+
 
 
 -- Trung bình tiền lương theo một nhóm cụ thể
@@ -17,16 +19,19 @@ HAVING SUM(salary) > 10000
 ORDER BY department_id;
 
 
+
 -- Viết câu lệnh đếm số lượng nhân viên mỗi phòng ban
 SELECT department_id, COUNT(employee_id)
 FROM employees
 GROUP BY department_id;
 
 
+
 -- Viết câu lệnh tìm mức lương cao nhất của mỗi phòng ban
 SELECT department_id, MAX(salary) as max_salary
 FROM employees
 GROUP BY department_id;
+
 
 
 -- Viết câu lệnh đếm số nhân viên, tổng mức lương và sự chênh lệch giữa mức lương cao nhất và thấp nhất cho từng công việc.
@@ -50,6 +55,7 @@ SELECT job_id,
    ROUND(AVG(salary), 2) avg_salary
 FROM employees
 GROUP BY job_id;
+
 
 
 -- Viết câu lệnh tìm phòng ban có nhiều hơn 5 nhân viên được nhận hoa hồng.
