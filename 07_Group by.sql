@@ -1,6 +1,7 @@
 /*markdown
 - Cách thức sử dụng mệnh đề GROUP BY trong câu lệnh SELECT để gộp nhóm dữ liệu với nhau.
 - Lọc dữ liệu sau khi gộp nhóm với mệnh đề HAVING.
+
 */
 
 
