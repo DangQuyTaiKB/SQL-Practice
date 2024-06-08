@@ -1,4 +1,5 @@
 /*markdown
+8/6/2024
 Tìm hiểu về:
 - Outer Join
 - Left Join
@@ -6,6 +7,7 @@ Tìm hiểu về:
 - Full Outer Join
 - using HR Schema (Oracle Live SQL)
 https://livesql.oracle.com/apex/f?p=590:41:15929362708296:::41:P41_ID:148405776030629168359882238551164482016
+
 
 */
 
@@ -22,6 +24,7 @@ on e.department_id = d.department_id;  --- 122 rows
 -- full join
 select count(*) from employees e full outer join departments d
 on e.department_id = d.department_id;  --- 122 rows
+
 
 
 -- Viết câu lệnh hiển thị tên nhân viên, mã nhân viên và thông tin của người quản lý của nhân viên đó.
