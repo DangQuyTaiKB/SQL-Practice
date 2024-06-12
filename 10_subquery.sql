@@ -1,6 +1,8 @@
 /*markdown
 - Cách thức thực hiện các lệnh truy vấn lồng trong SQL.
 - Các toán tử và mệnh đề thường được sử dụng khi thực hiện truy vấn lồng.
+- using Schema (Oracle Live SQL)
+https://livesql.oracle.com/apex/f?p=590:1:107909579371228:::RP::
 */
 
 -- Single-row query
