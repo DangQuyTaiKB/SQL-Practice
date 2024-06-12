@@ -2,6 +2,7 @@
 - Giới thiệu kiểu dữ liệu dạng chuỗi và các hàm chuyển đổi dữ liệu với chuỗi trong SQL.
 - Sử dụng các hàm phổ biến thường gặp khi thao tác với chuỗi ký tự.
 - Using EMP and DEPT tables. Classic tables with 4 departments and 14 employees.
+https://livesql.oracle.com/apex/f?p=590:41:15929362708296:::41:P41_ID:333667445241506780258350156571847879837
 */
 
 -- cột ename: lower case, initcap, concat 2 cột ename và job; sắp xếp theo cột initcap
@@ -36,6 +37,8 @@ SELECT CONCAT(department_id, employee_id) AS unique_id, first_name || ' ' || las
 
 SELECT first_name || '' || last_name || 'earns' || TO_CHAR(salary, '$99,999.00') || 'per month' as salary_info
 FROM employees;
+
+
 
 
 

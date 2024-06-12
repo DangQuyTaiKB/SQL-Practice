@@ -9,6 +9,7 @@ Tìm hiểu về:
 https://livesql.oracle.com/apex/f?p=590:41:15929362708296:::41:P41_ID:148405776030629168359882238551164482016
 
 
+
 */
 
 -- đếm số bản ghi khi sử dụng các phép join
@@ -24,6 +25,7 @@ on e.department_id = d.department_id;  --- 122 rows
 -- full join
 select count(*) from employees e full outer join departments d
 on e.department_id = d.department_id;  --- 122 rows
+
 
 
 
