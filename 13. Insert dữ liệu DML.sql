@@ -87,3 +87,19 @@ WHERE department_id IS NOT NULL
 AND employee_id NOT IN (
 SELECT employee_id FROM job_history
 );
+
+/*markdown
+Bổ trợ câu lệnh INSERT ALL trong SQL
+*/
+
+-- Khi thực hiện INSERT dữ liệu vào bảng, ta có thể thực hiện INSERT nhiều bản ghi hay nhiều bảng cùng lúc sử dụng mệnh đề INSERT ALL như sau.
+
+INSERT ALL
+    INTO employees VALUES (10, 'Huy', 'Tran Quoc', 'huytq@wecommit.com.vn', '511.111.4567', '05-OCT-16', 'AD_PRES', 5000, NULL, NULL, 10)
+    INTO employees VALUES (11, 'Huy', 'Tran Dinh', 'huytd@wecommit.com.vn', '512.112.4568', '05-OCT-16', 'AD_VP', 4000, NULL, 10, 20)
+    INTO employees VALUES (12, 'Oanh', 'Lai Thi', 'oanhlt@wecommit.com.vn', '513.113.4569', '16-MAY-20', 'FI_ACCOUNT', 1000, NULL, 10, 110)
+SELECT * FROM DUAL;
+
+-- Trong câu lệnh trên ta thấy cần có thêm một câu truy vấn con ở bên dưới mệnh đề INSERT chính. 
+-- Theo tài liệu của hãng Oracle thì ta cần phải thêm một câu truy vấn con sau lệnh INSERT ALL thì 
+-- mới có thể thực hiện thêm nhiều bản ghi cùng lúc trong 1 câu lệnh INSERT được.
